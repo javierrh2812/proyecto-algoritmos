@@ -1,6 +1,10 @@
 #include "Header.h"
 #include "Guardian.h"
 #include"Partida.h"
+
+void menu() {
+
+}
 int main()
 {
 	srand(time(NULL));
