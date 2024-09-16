@@ -6,7 +6,9 @@ protected:
 public:
 	Agua() : Recurso() {};
 	Agua(int x, int y) : Recurso(x, y) {};
-	~Agua() {};
+	~Agua() {
+	}
+	virtual void mostrar() {};
 
 	void borrar() {
 		Console::SetCursorPosition(x, y); cout << " ";
@@ -16,4 +18,4 @@ public:
 	{
 		Console::SetCursorPosition(x, y); cout << "~";
 	}
-};
+}; 
