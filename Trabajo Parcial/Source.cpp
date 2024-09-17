@@ -1,10 +1,7 @@
 #include "Header.h"
 #include "Guardian.h"
-#include"Partida.h"
+#include "Partida.h"
 
-void menu() {
-
-}
 int main()
 {
 	srand(time(NULL));
@@ -17,8 +14,10 @@ int main()
 			partida->sembrarGuardian(tecla);
 			partida->regarGuardian(tecla);
 			partida->dispararGuardian(tecla);
+			_sleep(50);
 		}
 		partida->colision();
+		_sleep(50);
 	}
 	system("pause>0");
 }

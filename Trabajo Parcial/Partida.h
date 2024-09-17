@@ -18,6 +18,9 @@ protected:
 public:
 
 	Partida() {
+		Console::SetWindowSize(101, 41);
+		Console::CursorVisible = false;
+
 		mapa = new Mapa(0, 0);
 		guardian = new Guardian(5, 15, 3);
 		for (int i = 0; i < 5; i++) {
