@@ -14,7 +14,7 @@ public:
 
 	void dibujar()
 	{
-		Console::SetCursorPosition(x, y); cout << "~";
+		Console::ForegroundColor = ConsoleColor::Cyan; Console::SetCursorPosition(x, y); cout << "~";
 	}
 	void hola() {};
 };

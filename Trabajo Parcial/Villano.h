@@ -20,7 +20,8 @@ public:
 
 	void dibujar()
 	{
-		Console::SetCursorPosition(x, y); cout << "X";
+	
+		Console::ForegroundColor= ConsoleColor::DarkRed; Console::SetCursorPosition(x, y); cout << "X";
 	}
 	bool getDerrotado() { return this->derrotado; }
 	void setDerrotado() { this->derrotado = true; }

@@ -19,7 +19,7 @@ public:
 
 	void dibujar()
 	{
-		Console::SetCursorPosition(x, y); cout << "*";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(x, y); cout << "*";
 	}
 
 	void regar() {

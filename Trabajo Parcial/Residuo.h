@@ -14,7 +14,7 @@ public:
 
 	void dibujar()
 	{
-		Console::SetCursorPosition(x, y); cout << "#";
+		Console::ForegroundColor = ConsoleColor::DarkYellow; Console::SetCursorPosition(x, y); cout << "#";
 	}
 
 	void disparar() {
