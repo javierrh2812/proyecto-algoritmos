@@ -13,7 +13,7 @@ protected:
 	Recurso* recursos[23];
 	Guardian* guardian;
 	Mapa* mapa;
-	Semilla *semillasSembradas[5];
+	Semilla* semillasSembradas[5];
 	Villano* villanos[7];
 public:
 
@@ -62,7 +62,7 @@ public:
 
 	void colision()
 	{
-		Recurso *r = reconocerRecurso();
+		Recurso* r = reconocerRecurso();
 		Villano* v = reconocerVillano();
 		if (r) {
 			if (!r->getRecolectado()) {
@@ -74,7 +74,7 @@ public:
 		}
 		if (v) {
 			if (!v->getDerrotado()) {
-				guardian->setVidas(guardian->getVidas() -1);
+				guardian->setVidas(guardian->getVidas() - 1);
 				guardian->setX(5);
 				guardian->setY(15);
 				v->dibujar();
@@ -84,6 +84,47 @@ public:
 
 		return;
 	}
+	void mostrarTiempo() {
+		int segundos = 60;
+		bool contadorSegundos = true;
+
+		while (contadorSegundos && segundos > 0) {
+			Console::SetCursorPosition(90, 0);
+			cout << "Tiempo: " << segundos << "   ";
+			_sleep(500);
+
+			if (guardian->getNroArboles() >= 10) {
+				Console::Clear();
+				Console::SetCursorPosition(0, 0);
+				cout << "YOU WIN" << endl;
+				contadorSegundos = false;
+				break;
+			}
+
+			int recursosRecolectados = 0;
+			for (int i = 0; i < 23; i++) {
+				if (recursos[i]->getRecolectado()) {
+					recursosRecolectados++;
+				}
+			}
+			if (recursosRecolectados >= 8) {
+				Console::Clear();
+				Console::SetCursorPosition(0, 0);
+				cout << "Game Over" << endl;
+				contadorSegundos = false;
+				break;
+			}
+
+		}
+
+		if (segundos == 0 && contadorSegundos) {
+			Console::Clear();
+			Console::SetCursorPosition(0, 0);
+			cout << "Game Over" << endl;
+		}
+	}
+
+
 
 	Recurso* reconocerRecurso() {
 		for (int i = 0; i < 23; i++) {
