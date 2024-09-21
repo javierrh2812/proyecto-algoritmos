@@ -20,8 +20,7 @@ protected:
 public: 
 	
 	Partida() 
-	{
-		menu->Iniciar_Menu();		
+	{		
 		mapa = new Mapa(0, 0);
 		guardian = new Guardian(5, 15, 3);
 		for (int i = 0; i < 5; i++) {
