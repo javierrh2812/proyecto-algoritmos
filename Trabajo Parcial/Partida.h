@@ -6,6 +6,7 @@
 #include "Residuo.h"
 #include "Guardian.h"
 #include "Villano.h"
+#include "Menu.h"
 
 class Partida
 {
@@ -15,12 +16,12 @@ protected:
 	Mapa* mapa;
 	Semilla *semillasSembradas[5];
 	Villano* villanos[7];
-public:
-
-	Partida() {
-		Console::SetWindowSize(101, 41);
-		Console::CursorVisible = false;
-
+	Menu* menu;
+public: 
+	
+	Partida() 
+	{
+		menu->Iniciar_Menu();		
 		mapa = new Mapa(0, 0);
 		guardian = new Guardian(5, 15, 3);
 		for (int i = 0; i < 5; i++) {

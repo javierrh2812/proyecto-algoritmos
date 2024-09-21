@@ -115,6 +115,7 @@
     <ClInclude Include="Arbol.h" />
     <ClInclude Include="Guardian.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Partida.h" />
     <ClInclude Include="Recurso.h" />
     <ClInclude Include="Mapa.h" />

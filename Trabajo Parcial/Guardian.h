@@ -1,13 +1,5 @@
 #pragma once
 #include "Personaje.h"
-#define DERECHA 77
-#define DERECHA_LETRA 108
-#define IZQUIERDA 75
-#define IZQUIERDA_LETRA 106
-#define ARRIBA 72
-#define ARRIBA_LETRA 105
-#define ABAJO 80
-#define ABAJO_LETRA 107
 #include "Recurso.h"
 #include "Semilla.h"
 #include "Agua.h"
