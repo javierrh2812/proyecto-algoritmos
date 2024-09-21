@@ -72,7 +72,6 @@ public:
             }
             break;
         }
-<<<<<<< HEAD
 
         dibujar();
     }
@@ -116,10 +115,6 @@ public:
             return agua;
         }
         return nullptr;
-    }
-
-=======
-
         dibujar();
     }
 
@@ -163,8 +158,6 @@ public:
         }
         return nullptr;
     }
-
->>>>>>> CAMBIOS
     void disparar(char tecla) {
         if (this->nroResiduos > 0) {
             nroResiduos--;
@@ -179,16 +172,12 @@ public:
 		Console::ForegroundColor = ConsoleColor::Cyan; Console::SetCursorPosition(28, 38); cout << "AGUA ~:" << litrosAgua;
 		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(55, 38); cout << "SEMILLAS *:" << nroSemillas;
 		Console::ForegroundColor = ConsoleColor::DarkYellow; Console::SetCursorPosition(78, 38);	cout << "RESIDUOS #:" << nroResiduos;
-<<<<<<< HEAD
 	};
-};
     void mostrarIndicadores() {
         Console::ForegroundColor = ConsoleColor::Red; Console::SetCursorPosition(5, 38); cout << "VIDAS <3:" << vidas;
         Console::ForegroundColor = ConsoleColor::Cyan; Console::SetCursorPosition(28, 38); cout << "AGUA ~:" << litrosAgua;
         Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(55, 38); cout << "SEMILLAS *:" << nroSemillas;
         Console::ForegroundColor = ConsoleColor::DarkYellow; Console::SetCursorPosition(78, 38); cout << "RESIDUOS #:" << nroResiduos;
     }
-=======
-	}
->>>>>>> CAMBIOS
+
 };
