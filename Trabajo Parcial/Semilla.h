@@ -1,7 +1,6 @@
 #pragma once
 #include "Recurso.h"
 #include "Arbol.h"
-#include "Guardian.h"
 
 class Semilla : public Recurso
 {
@@ -13,22 +12,21 @@ public:
 		this->vecesRegada = 0;
 	};
 	~Semilla() {};
-	
+
 	void borrar() {
 		Console::SetCursorPosition(x, y); cout << " ";
 	}
 
 	void dibujar()
 	{
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(x, y); cout << "*";
+		Console::ForegroundColor = ConsoleColor::DarkYellow; Console::SetCursorPosition(x, y); cout << "*";
 	}
 
-	void regar(Guardian* guardian) {
+	void regar() {
 		this->vecesRegada++;
 		if (this->vecesRegada == 3) {
 			Arbol* arbol = new Arbol(this->x, this->y);
 			arbol->dibujar();
 		}
 	}
-
 };
