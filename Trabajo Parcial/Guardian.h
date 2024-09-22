@@ -110,9 +110,9 @@ public:
 	}
 
 	void mostrarIndicadores() {
-		Console::SetCursorPosition(5, 38); cout << "VIDAS <3:" << vidas;
-		Console::SetCursorPosition(28, 38); cout << "AGUA ~:" << litrosAgua;
-		Console::SetCursorPosition(55, 38); cout << "SEMILLAS *:" << nroSemillas;
-		Console::SetCursorPosition(78, 38);	cout << "RESIDUOS #:" << nroResiduos;
+		Console::ForegroundColor = ConsoleColor::DarkRed; Console::SetCursorPosition(x, y); cout << "*"; Console::SetCursorPosition(5, 38); cout << "VIDAS <3:" << vidas;
+		Console::ForegroundColor = ConsoleColor::Cyan; Console::SetCursorPosition(x, y); cout << "*"; Console::SetCursorPosition(28, 38); cout << "AGUA ~:" << litrosAgua;
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(x, y); cout << "*"; Console::SetCursorPosition(55, 38); cout << "SEMILLAS *:" << nroSemillas;
+		Console::ForegroundColor = ConsoleColor::DarkYellow; Console::SetCursorPosition(x, y); cout << "*"; Console::SetCursorPosition(78, 38);	cout << "RESIDUOS #:" << nroResiduos;
 	}
 };
