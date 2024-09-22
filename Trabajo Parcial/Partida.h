@@ -90,6 +90,7 @@ public:
 	void mostrarTiempo() {
 		int segundos = 60;
 		bool contadorSegundos = true;
+
 		while (contadorSegundos && segundos > 0) {
 			Console::SetCursorPosition(90, 0);
 			cout << "Tiempo: " << segundos << "   ";
