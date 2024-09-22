@@ -70,23 +70,23 @@ public:
 	}
 
 	void MostrarTitulo() {
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 6); cout << "	                                   .___.__                 " << endl;
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 7); cout << "	   ____   __ __ _____  _______   __| _/|__|_____     ____  " << endl;
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 8); cout << "	  / ___\ |  |  \\__  \ \_  __ \ / __ | |  |\__  \   /    \ " << endl;
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 9); cout << "     / /_/  >|  |  / / __ \_|  | \// /_/ | |  | / __ \_|   |  \"" << endl;
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 10); cout << "	 \___  / |____/ (____  /|__|   \____ | |__|(____  /|___|  /" << endl;
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 12); cout << "	/_____/              \/             \/          \/      \/ " << endl;
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 13); cout << "          _____ ";
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 14); cout << "   ____ _/ ____\"";
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 15); cout << "  /  _ \\   __\ ";
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 16); cout << " (  <_> )|  |   ";
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 17); cout << " \____/ |__|   ";
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 13); cout << "                 __                          ";
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 14); cout << "  ____  _____  _/  |_  __ __ _______   ____  ";
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 15); cout << " /    \\ \\__ \ \ \\   __\\|  |  \\\\_  __\ \_/ __ \\ ";
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 16); cout << "|   |  \ / __ \_|  |  |  |  / |  | \/\  ___/ ";
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 17); cout << "|___|  /(____  /|__|  |____/  |__|    \___  >	";
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(17, 17); cout << "                	\ / \ /";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(26, 6); cout << "  ________                       .___.__                " << endl;
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(26, 7); cout << " /  _____/ __ _______ _______  __| _/|__|____    ____   " << endl;
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(26, 8); cout << "/   \\  ___|  |  \\__  \\\\_  __ \\/ __ | |  \\__  \\  /    \\  " << endl;
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(26, 9); cout << "\\    \\_\\  \\  |  // __ \\|  | \\/ /_/ | |  |/ __ \\|   |  \\ " << endl;
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(26, 10); cout << " \\______  /____/(____  /__|  \\____ | |__(____  /___|  / " << endl;
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(26, 11); cout << "        \\/           \\/           \\/         \\/     \\/ " << endl;
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(43, 13); cout << "        _____                                            ";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(43, 14); cout << "  _____/ ____\\                                           ";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(43, 15); cout << " /  _ \\   __\\                                            ";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(43, 16); cout << "(  <_> )  |                                              ";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(43, 17); cout << " \\____/|__|  ";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(30, 19); cout << " _______          __                                    ";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(30, 20); cout << " \\      \\ _____ _/  |_ __ _________   ____              ";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(30, 21); cout << " /   |   \\\\__  \\\\   __\\  |  \\_  __ \\_/ __ \\             ";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(30, 22); cout << "/    |    \\/ __ \\|  | |  |  /|  | \\/\\  ___/             ";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(30, 23); cout << "\\____|__  (____  /__| |____/ |__|    \\___  >            ";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(30, 24); cout << "        \\/     \\/                        \\/ ";
 	}
 	void MostrarOpciones() {
 		Console::ForegroundColor = ConsoleColor::Green;

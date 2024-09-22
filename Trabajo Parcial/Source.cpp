@@ -8,7 +8,7 @@ int juego()
 	Partida* partida = new Partida();
 	partida->dibujar();
 
-	while (partida->getGameOver()==false) {
+	while (partida->getGameOver()==false && partida->getYouWin()==false) {
 		if (_kbhit()) {
 			char tecla = _getch();
 			partida->moverGuardian(tecla);
@@ -17,12 +17,13 @@ int juego()
 			partida->dispararGuardian(tecla);
 		}
 		else {
-			_sleep(1000);
+			_sleep(500);
 			partida->mostrarTiempo();
-
 			partida->colision();
 		}
 	}
+
+	return 0;
 }
 
 int main()
@@ -37,7 +38,6 @@ int main()
 		{
 			system("cls");
 			juego();
-
 
 		}
 		else  if (Opcion == 2)

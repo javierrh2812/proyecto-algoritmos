@@ -19,6 +19,7 @@ protected:
 	int segundos = 60;
 	Menu* menu;
 	bool gameOver=false;
+	bool youWin = false;
 public: 
 	
 	Partida() 
@@ -45,6 +46,10 @@ public:
 	~Partida() {}
 	int getGameOver() {
 		return this->gameOver;
+	}
+
+	int getYouWin() {
+		return youWin;
 	}
 
 	void dibujar(){
@@ -98,9 +103,7 @@ public:
 			cout << "Tiempo: " << segundos << "   ";
 
 			if (guardian->getNroArboles() >= 10) {
-				Console::Clear();
-				Console::SetCursorPosition(0, 0);
-				cout << "YOU WIN" << endl;
+				handleYouWin();
 			}
 
 			int recursosRecolectados = 0;
@@ -110,20 +113,44 @@ public:
 				}
 			}
 			if (recursosRecolectados >= 8) {
-				Console::Clear();
-				Console::SetCursorPosition(0, 0);
-				cout << "Game Over" << endl;
-				gameOver = true;
+				handleYouWin();
 			}
 			segundos--;
 		}
 		if (segundos == 0 ) {
-			Console::Clear();
-			Console::SetCursorPosition(0, 0);
-			cout << "Game Over" << endl;
-			gameOver = true;
+			handleGameOver();
 		}
 	}
+
+	void handleYouWin() {
+		Console::Clear();
+		Console::SetCursorPosition(0, 0);
+		youWin = true;
+		cout << 
+			"                                      __          \n"
+			"   _________    ____ _____    _______/  |_  ____  \n"
+			"  / ___\\__  \\  /    \\\\__  \\  /  ___/\\   __\\/ __ \\ \n"
+			" / /_/  > __ \\|   |  \\/ __ \\_\\___ \\  |  | \\  ___/ \n"
+			" \\___  (____  /___|  (____  /____  > |__|  \\___  >\n"
+			"/_____/     \\/     \\/     \\/     \\/            \\/ \n";		
+		_sleep(2000);
+
+	}
+
+	void handleGameOver() {
+		Console::Clear();
+		Console::SetCursorPosition(0, 0);
+		gameOver = true;
+		std::cout << "   _________    _____   ____     _______  __ ___________ \n"
+			"  / ___\\__  \\  /     \\_/ __ \\   /  _ \\  \\/ // __ \\_  __ \\\n"
+			" / /_/  > __ \\|  Y Y  \\  ___/  (  <_> )   /\\  ___/|  | \\/\n"
+			" \\___  (____  /__|_|  /\\___  >  \\____/ \\_/  \\___  >__|   \n"
+			"/_____/     \\/      \\/     \\/                   \\/       \n";
+
+		_sleep(2000);
+
+	}
+
 
 	Recurso* reconocerRecurso() {
 		for (int i = 0; i < 23; i++) {
