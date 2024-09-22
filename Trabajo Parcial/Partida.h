@@ -84,7 +84,51 @@ public:
 
 		return;
 	}
+<<<<<<< HEAD
 	
+=======
+	void mostrarTiempo() {
+		int segundos = 60;
+		bool contadorSegundos = true;
+		while (contadorSegundos && segundos > 0) {
+			Console::SetCursorPosition(90, 0);
+			cout << "Tiempo: " << segundos << "   ";
+			_sleep(500);
+
+			if (guardian->getNroArboles() >= 10) {
+				Console::Clear();
+				Console::SetCursorPosition(0, 0);
+				cout << "YOU WIN" << endl;
+				contadorSegundos = false;
+				break;
+			}
+
+			int recursosRecolectados = 0;
+			for (int i = 0; i < 23; i++) {
+				if (recursos[i]->getRecolectado()) {
+					recursosRecolectados++;
+				}
+			}
+			if (recursosRecolectados >= 8) {
+				Console::Clear();
+				Console::SetCursorPosition(0, 0);
+				cout << "Game Over" << endl;
+				contadorSegundos = false;
+				break;
+			}
+
+		}
+
+		if (segundos == 0 && contadorSegundos) {
+			Console::Clear();
+			Console::SetCursorPosition(0, 0);
+			cout << "Game Over" << endl;
+		}
+	}
+
+
+
+>>>>>>> #
 	Recurso* reconocerRecurso() {
 		for (int i = 0; i < 23; i++) {
 			Recurso* r = recursos[i];
