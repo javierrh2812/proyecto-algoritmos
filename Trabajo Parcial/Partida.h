@@ -100,7 +100,7 @@ public:
 
 		if (segundos > 0) {
 			Console::SetCursorPosition(90, 0);
-			cout << "Tiempo: " << segundos << "   ";
+			Console::ForegroundColor = ConsoleColor::White; cout << "Tiempo: " << segundos << "   ";
 
 			if (guardian->getNroArboles() >= 10) {
 				handleYouWin();
