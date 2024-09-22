@@ -17,12 +17,6 @@ public:
 		Console::ForegroundColor = ConsoleColor::DarkYellow; Console::SetCursorPosition(x, y); cout << "#";
 	}
 
-	void disparar() {
-		while (x < 99) {
-			x++;
-			_sleep(50);			
-			dibujar();
-			borrar();
-		}
-	}
+
+
 };

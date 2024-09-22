@@ -19,8 +19,9 @@ int juego()
 		}
 		else {
 			_sleep(100);
-			partida->mostrarTiempo();
+			partida->validarJuego();
 			partida->colision();
+			_sleep(100);
 		}
 	}
 

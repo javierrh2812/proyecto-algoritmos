@@ -16,10 +16,11 @@ protected:
 	Mapa* mapa;
 	Semilla* semillasSembradas[5];
 	Villano* villanos[7];
-	int segundos = 600;
+	int segundos = 80 * 10;
 	Menu* menu;
 	bool gameOver=false;
 	bool youWin = false;
+	int villanosEliminados = 0;
 public: 
 	
 	Partida() 
@@ -77,6 +78,7 @@ public:
 		Recurso* r = reconocerRecurso();
 		Villano* v = reconocerVillano();
 
+		guardian->dibujar();
 		if (r) {
 			if (!r->getRecolectado()) {
 				r->borrar();
@@ -98,29 +100,35 @@ public:
 
 		return;
 	}
-	
-	void mostrarTiempo() {
+
+	template<typename T>
+	string convertAndRemoveLast(T value) {
+		string str = to_string(value);
+		if (!str.empty()) {
+			str.pop_back();
+		}
+		return str;
+	}
+
+	//TODO: cambiar de nombre
+	void validarJuego() {
 
 		if (segundos > 0) {
 			Console::SetCursorPosition(90, 0);
-			cout << "Tiempo: " << segundos << "   ";
+			cout << "Tiempo: " << convertAndRemoveLast(segundos) << "   ";
 
-			if (guardian->getNroArboles() >= 10) {
-				handleYouWin();
-			}
+			int recursosRecolectados = guardian->obtenerCantidadDeRecursosRecolectados();
 
-			int recursosRecolectados = 0;
-			for (int i = 0; i < 23; i++) {
-				if (recursos[i]->getRecolectado()) {
-					recursosRecolectados++;
-				}
-			}
-			if (recursosRecolectados >= 8) {
+			bool esGanador = recursosRecolectados >= 5
+				&& guardian->getNroArboles() >= 1
+				&& guardian->getVillanosEliminados() >= 1;
+
+			if (esGanador) {
 				handleYouWin();
 			}
 			segundos--;
 		}
-		if (segundos == 0 ) {
+		if (segundos == 0 || guardian->getVidas()==0 ) {
 			handleGameOver();
 		}
 	}
@@ -175,9 +183,24 @@ public:
 
 			if (colisionX && colisionY) {
 				return v;
+				this->villanosEliminados++;
 			}
 		}
 		return nullptr;
+	}
+
+	bool colisionResiduoConVillano(Residuo *r) {
+		for (int i = 0; i < 7; i++) {
+			Villano* v = villanos[i];
+			bool colisionX = r->getX()-1 == v->getX();
+			bool colisionY = r->getY() == v->getY();
+
+			if (colisionX && colisionY) {
+				guardian->agregarVillanoEliminado();
+				return true;
+			}
+		}
+		return false;
 	}
 
 	void agregarSemillaSembrada(Semilla* nuevaSemilla) {
@@ -210,7 +233,10 @@ public:
 					if (semillasSembradas[i]->getX() == xRegar && semillasSembradas[i]->getY() == yRegar) {
 						Agua* agua = guardian->regar(tecla);
 						if (agua) {
-							semillasSembradas[i]->regar();
+							Arbol *arbol = semillasSembradas[i]->regar();
+							if (arbol) {
+								this->guardian->agregarArbol();
+							}
 						}
 					}
 				}
@@ -220,7 +246,14 @@ public:
 
 	void dispararGuardian(char tecla) {
 		if (tecla == 'D') {
-			guardian->disparar(tecla);
+			Residuo *r = guardian->disparar();
+			guardian->dibujar();
+			do {
+				r->dibujar();
+				_sleep(50);
+				r->borrar();
+				r->setX(r->getX() + 1);
+			} while (r->getX() < 99 && !colisionResiduoConVillano(r));
 		}
 	}
 };

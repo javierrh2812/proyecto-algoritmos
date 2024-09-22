@@ -2,6 +2,7 @@
 #include "conio.h"
 #include "iostream"
 #include <chrono>
+#include "string"
 #define DERECHA 77
 #define DERECHA_LETRA 108
 #define IZQUIERDA 75
@@ -17,3 +18,10 @@
 using namespace std;
 using namespace System;
 
+void moveTo (int x, int y) {
+		Console::SetCursorPosition(x, y);
+}
+
+void changeColor(ConsoleColor color) {
+	Console::ForegroundColor = color;
+}

@@ -47,6 +47,9 @@ public:
 			if (Opcion > 1) {
 				Opcion--;
 			}
+			else {
+				Opcion = 4;
+			}
 		}
 		else if (Tecla ==ABAJO) {
 			if (Opcion < 4) {
@@ -137,9 +140,13 @@ public:
 		cout << "y limpiar el ambiente antes de que el tiempo o sus vidas se agoten.";
 		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(15, 10);
 		cout << "*Cuando el jugador logre reforestar el 70% del mapa, GANASTE";
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(15, 12);
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(16, 11);
+		cout << "Es decir, cuando por lo menos plantas un arbol, eliminas a un villano";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(16, 12);
+		cout << "y al menos tienes 5 recursos recolectados";
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(15, 14);
 		cout << "*Si las vidas del jugador llegan a 0 o no consigue suficientes recursos";
-		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(16, 13); 
+		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(16, 15); 
 		cout<<"para reforestar el terreno, PERDISTE";
 	
 

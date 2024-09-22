@@ -22,11 +22,13 @@ public:
 		Console::ForegroundColor = ConsoleColor::Green; Console::SetCursorPosition(x, y); cout << "*";
 	}
 
-	void regar() {
+	Arbol *regar() {
 		this->vecesRegada++;
 		if (this->vecesRegada == 3) {
 			Arbol* arbol = new Arbol(this->x, this->y);
 			arbol->dibujar();
+			return arbol;
 		}
+		else return nullptr;
 	}
 };

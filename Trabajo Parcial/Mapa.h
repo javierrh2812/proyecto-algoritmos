@@ -33,9 +33,10 @@ public:
 			Console::ForegroundColor = ConsoleColor::DarkCyan; Console::SetCursorPosition(100, j); cout << "||";
 		}
 		for (int k = 37; k < 40; k++) {
-			Console::ForegroundColor = ConsoleColor::DarkCyan; Console::SetCursorPosition(25, k); cout << "||";
-			Console::ForegroundColor = ConsoleColor::DarkCyan; Console::SetCursorPosition(50, k); cout << "||";
-			Console::ForegroundColor = ConsoleColor::DarkCyan; Console::SetCursorPosition(75, k); cout << "||";
+			Console::SetCursorPosition(18, k); cout << "||";
+			Console::SetCursorPosition(33, k); cout << "||";
+			Console::SetCursorPosition(55, k); cout << "||";
+			Console::SetCursorPosition(75, k); cout << "||";
 		}
 		
 	};

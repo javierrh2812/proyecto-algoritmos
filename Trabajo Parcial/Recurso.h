@@ -18,7 +18,7 @@ public:
 		this->recolectado = true;
 	}
 	virtual ~Recurso() {};
-	void setX() { this->x = x; }
+	void setX(int x) { this->x = x; }
 	int getX() { return this->x; }
 	void setY(int y) { this->y = y; }
 	int getY() { return this->y; }
