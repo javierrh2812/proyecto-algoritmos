@@ -7,6 +7,7 @@ int juego()
 	srand(time(NULL));
 	Partida* partida = new Partida();
 	partida->dibujar();
+
 	while (true) {
 		if (_kbhit()) {
 			char tecla = _getch();
@@ -14,10 +15,11 @@ int juego()
 			partida->sembrarGuardian(tecla);
 			partida->regarGuardian(tecla);
 			partida->dispararGuardian(tecla);
-			_sleep(50);
-		}
+		}		
+		_sleep(500);
+		partida->mostrarTiempo();
+
 		partida->colision();
-		_sleep(50);
 	}
 }
 

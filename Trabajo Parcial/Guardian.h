@@ -20,8 +20,10 @@ public:
 		this->nroSemillas = 0;
 		this->nroResiduos = 0;
 	}
-	~Guardian() {};
-
+	~Guardian() {}
+	int getNroArboles() {
+		return this->nroArboles;
+	}
 	void mover(int tecla)
 	{
 		borrar();
@@ -112,5 +114,5 @@ public:
 		Console::SetCursorPosition(28, 38); cout << "AGUA ~:" << litrosAgua;
 		Console::SetCursorPosition(55, 38); cout << "SEMILLAS *:" << nroSemillas;
 		Console::SetCursorPosition(78, 38);	cout << "RESIDUOS #:" << nroResiduos;
-	};
+	}
 };
