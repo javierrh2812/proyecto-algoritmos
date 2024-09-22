@@ -17,7 +17,7 @@ int juego()
 			partida->dispararGuardian(tecla);
 		}
 		else {
-			_sleep(500);
+			_sleep(100);
 			partida->mostrarTiempo();
 			partida->colision();
 		}

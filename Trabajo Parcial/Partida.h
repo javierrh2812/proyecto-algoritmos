@@ -16,7 +16,7 @@ protected:
 	Mapa* mapa;
 	Semilla* semillasSembradas[5];
 	Villano* villanos[7];
-	int segundos = 60;
+	int segundos = 600;
 	Menu* menu;
 	bool gameOver=false;
 	bool youWin = false;
