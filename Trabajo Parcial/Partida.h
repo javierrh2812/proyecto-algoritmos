@@ -115,6 +115,7 @@ public:
 
 		if (segundos > 0) {
 			Console::SetCursorPosition(90, 0);
+			Console::ForegroundColor = ConsoleColor::White;
 			cout << "Tiempo: " << convertAndRemoveLast(segundos) << "   ";
 
 			int recursosRecolectados = guardian->obtenerCantidadDeRecursosRecolectados();
