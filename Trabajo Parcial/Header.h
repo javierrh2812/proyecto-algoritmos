@@ -1,6 +1,7 @@
 #pragma once
 #include "conio.h"
 #include "iostream"
+#include <chrono>
 #define DERECHA 77
 #define DERECHA_LETRA 108
 #define IZQUIERDA 75

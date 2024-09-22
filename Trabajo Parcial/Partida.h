@@ -18,12 +18,14 @@ protected:
 	Villano* villanos[7];
 	int segundos = 60;
 	Menu* menu;
+	bool gameOver=false;
 public: 
 	
 	Partida() 
 	{		
 		mapa = new Mapa(0, 0);
 		guardian = new Guardian(5, 15, 3);
+		
 		for (int i = 0; i < 5; i++) {
 			recursos[i] = new Semilla();
 		}
@@ -41,8 +43,11 @@ public:
 		}
 	}
 	~Partida() {}
-	
-	void dibujar() {
+	int getGameOver() {
+		return this->gameOver;
+	}
+
+	void dibujar(){
 		mapa->dibujar();
 		for (int i = 0; i < 23; i++) {
 			if (!recursos[i]->getRecolectado()) {
@@ -87,9 +92,8 @@ public:
 	}
 	
 	void mostrarTiempo() {
-		bool contadorSegundos = true;
 
-		if (contadorSegundos && segundos > 0) {
+		if (segundos > 0) {
 			Console::SetCursorPosition(90, 0);
 			cout << "Tiempo: " << segundos << "   ";
 
@@ -97,7 +101,6 @@ public:
 				Console::Clear();
 				Console::SetCursorPosition(0, 0);
 				cout << "YOU WIN" << endl;
-				contadorSegundos = false;
 			}
 
 			int recursosRecolectados = 0;
@@ -110,15 +113,15 @@ public:
 				Console::Clear();
 				Console::SetCursorPosition(0, 0);
 				cout << "Game Over" << endl;
-				contadorSegundos = false;
-				guardian->borrar();
+				gameOver = true;
 			}
 			segundos--;
 		}
-		if (segundos == 0 && contadorSegundos) {
+		if (segundos == 0 ) {
 			Console::Clear();
 			Console::SetCursorPosition(0, 0);
 			cout << "Game Over" << endl;
+			gameOver = true;
 		}
 	}
 

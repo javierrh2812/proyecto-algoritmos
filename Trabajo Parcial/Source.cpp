@@ -8,18 +8,20 @@ int juego()
 	Partida* partida = new Partida();
 	partida->dibujar();
 
-	while (true) {
+	while (partida->getGameOver()==false) {
 		if (_kbhit()) {
 			char tecla = _getch();
 			partida->moverGuardian(tecla);
 			partida->sembrarGuardian(tecla);
 			partida->regarGuardian(tecla);
 			partida->dispararGuardian(tecla);
-		}		
-		_sleep(500);
-		partida->mostrarTiempo();
+		}
+		else {
+			_sleep(1000);
+			partida->mostrarTiempo();
 
-		partida->colision();
+			partida->colision();
+		}
 	}
 }
 
