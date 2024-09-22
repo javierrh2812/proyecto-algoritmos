@@ -31,29 +31,17 @@ public:
 		switch (tecla)
 		{
 		case IZQUIERDA:
-			if (this->x > 1)
-			{
-				this->x--;
-			}
+			if (this->x > 2) this->x--;
 			break;
 		case DERECHA:
-			if (this->x < 99)
-			{
-				this->x++;
-			}
+			if (this->x < 99) this->x++;
 			break;
 		case ABAJO:
-			if (this->y < 39)
-			{
-				this->y++;
-			}
+			if (this->y < 39) this->y++;
 			break;
 
 		case ARRIBA:
-			if (this->y > 1)
-			{
-				this->y--;
-			}
+			if (this->y > 1) this->y--;
 			break;
 		}
 

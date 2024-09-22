@@ -44,6 +44,7 @@ public:
 		}
 	}
 	~Partida() {}
+
 	int getGameOver() {
 		return this->gameOver;
 	}
@@ -75,9 +76,11 @@ public:
 	{
 		Recurso* r = reconocerRecurso();
 		Villano* v = reconocerVillano();
+
 		if (r) {
 			if (!r->getRecolectado()) {
 				r->borrar();
+				guardian->dibujar();
 				guardian->recolectar(r);
 				guardian->mostrarIndicadores();
 			}
@@ -150,7 +153,6 @@ public:
 		_sleep(2000);
 
 	}
-
 
 	Recurso* reconocerRecurso() {
 		for (int i = 0; i < 23; i++) {

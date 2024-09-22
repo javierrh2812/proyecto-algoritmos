@@ -7,6 +7,7 @@ int juego()
 	srand(time(NULL));
 	Partida* partida = new Partida();
 	partida->dibujar();
+	partida->moverGuardian(1);
 
 	while (partida->getGameOver()==false && partida->getYouWin()==false) {
 		if (_kbhit()) {
